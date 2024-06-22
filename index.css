@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400,500,600,700&display=swap");
 
 * {
   margin: 0;
@@ -7,14 +8,19 @@
 }
 
 body {
-  font-family: "Mukta", sans-serif;
   background-color: gainsboro;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: #0b1215;
   padding: 1rem 3rem;
-  box-shadow: 0 2px 15px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
   text-align: center;
 }
 
@@ -23,31 +29,70 @@ header div {
 }
 
 header div h1 {
+  font-family: "Mukta", sans-serif;
   font-weight: 600;
+  white-space: nowrap;
   text-transform: uppercase;
-  font-size: 42px;
+  font-size: 24px;
   background: -webkit-linear-gradient(220.55deg, #8fff85 0%, #39a0ff 100%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-@media screen and (max-width: 550px) {
-  header div h1 {
-    font-size: 24px;
-  }
-}
-
 main {
   display: grid;
-  grid-template-columns: 3fr;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
   background-color: white;
   max-width: 1200px;
-  margin: 0 auto;
-  height: 100vh;
-  padding: 2rem;
+  margin: 72px auto 0;
+  padding: 1rem;
 }
 
 main .card {
-  border: 2px solid red;
+  border: 2px solid gainsboro;
+  border-radius: 10px;
+  max-height: fit-content;
+  min-height: 300px;
+}
+
+main .card .image-box {
+  border-radius: 10px;
+  background-color: red;
+  height: 50%;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+main .card .text-content {
+  height: 50%;
+  overflow-y: hidden;
+  padding: 1rem;
+}
+
+main .card .text-content h2 {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+}
+
+main .card .text-content p {
+  color: grey;
+}
+
+@media screen and (min-width: 550px) {
+  main {
+    padding: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 750px) {
+  header div h1 {
+    font-size: 32px;
+  }
+
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
