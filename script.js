@@ -1,7 +1,7 @@
 const projects = [
   {
     name: "Form Validation",
-    img: "1-weather-app/assets/print.png",
+    img: "1-form-validation/assets/print.png",
     desc: "Simples formulário com sistema de validação de campos.",
     URL: "1-form-validation/index.html",
   },

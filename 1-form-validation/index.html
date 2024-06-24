@@ -8,8 +8,18 @@
   </head>
   <body>
     <header>
-      <div class="text-box">
-        <h1>50 Javascript Projects</h1>
+      <div class="header-content">
+        <img
+          src="assets/left-arrow.svg"
+          width="30px"
+          height="30px"
+          alt="Left Arrow"
+          id="go-back-button"
+        />
+        <div class="text-box">
+          <h1>50 Javascript Projects</h1>
+        </div>
+        <div></div>
       </div>
     </header>
     <main>
@@ -17,13 +27,21 @@
         <form data-formulario>
           <fieldset>
             <label for="nome">Nome <span>*</span></label>
-            <input name="nome" id="nome" type="text" minlength="3" required />
+            <input
+              name="nome"
+              placeholder="Seu nome"
+              id="nome"
+              type="text"
+              minlength="3"
+              required
+            />
             <span class="error-message"></span>
           </fieldset>
 
           <fieldset>
             <label for="email">E-mail <span>*</span></label>
             <input
+              placeholder="Seu email"
               name="email"
               id="email"
               type="email"
@@ -34,13 +52,20 @@
           </fieldset>
           <fieldset>
             <label for="rg">RG <span>*</span></label>
-            <input name="rg" id="rg" type="text" required />
+            <input
+              name="rg"
+              placeholder="Seu RG"
+              id="rg"
+              type="text"
+              required
+            />
             <span class="error-message"></span>
           </fieldset>
           <fieldset>
             <label for="cpf">CPF <span>*</span></label>
             <input
               name="cpf"
+              placeholder="Seu CPF"
               id="cpf"
               required
               type="text"
