@@ -36,9 +36,9 @@ form.addEventListener("submit", (e) => {
     alert("O campo de pesquisa está vazio!");
   } else {
     cityInput = search.value;
-    fetchWeatherData();
     search.value = "";
     app.style.opacity = "0";
+    fetchWeatherData();
   }
 
   e.preventDefault();
