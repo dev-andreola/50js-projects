@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="text-box">
+        <h1>50 Javascript Projects</h1>
+      </div>
+    </header>
+    <main>
+      <div class="card">
+        <form data-formulario>
+          <fieldset>
+            <label for="nome">Nome <span>*</span></label>
+            <input name="nome" id="nome" type="text" minlength="3" required />
+            <span class="error-message"></span>
+          </fieldset>
+
+          <fieldset>
+            <label for="email">E-mail <span>*</span></label>
+            <input
+              name="email"
+              id="email"
+              type="email"
+              minlength="4"
+              required
+            />
+            <span class="error-message"></span>
+          </fieldset>
+          <fieldset>
+            <label for="rg">RG <span>*</span></label>
+            <input name="rg" id="rg" type="text" required />
+            <span class="error-message"></span>
+          </fieldset>
+          <fieldset>
+            <label for="cpf">CPF <span>*</span></label>
+            <input
+              name="cpf"
+              id="cpf"
+              required
+              type="text"
+              minlength="11"
+              maxlength="14"
+              pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"
+            />
+            <span class="error-message"></span>
+          </fieldset>
+          <fieldset>
+            <label for="birthdaty">Data de nascimento <span>*</span></label>
+            <input name="birthdaty" id="birthdaty" type="date" required />
+            <span class="error-message"></span>
+          </fieldset>
+          <fieldset class="term">
+            <input id="term" name="term" type="checkbox" required />
+            <label for="term" class="term-label"
+              >Li e concordo com os Termos de Serviço</label
+            >
+
+            <span class="error-message"></span>
+          </fieldset>
+
+          <div>
+            <input
+              value="Avançar"
+              class="form-button"
+              id="submit"
+              data-submit-button
+              type="submit"
+            />
+            <span class="error-message"></span>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
