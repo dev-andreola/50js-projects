@@ -1,7 +1,7 @@
 const projects = [
   {
     name: "Weather App",
-    img: "1-weather-app/print.png",
+    img: "1-weather-app/assets/print.png",
     desc: "Um simples aplicativo que mostra o clima de qualquer local digitado em tempo real.",
     URL: "1-weather-app/index.html",
   },

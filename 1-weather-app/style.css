@@ -10,11 +10,19 @@
 body {
   background-color: gainsboro;
   font-family: "Poppins", sans-serif;
+  background-color: #111;
+  height: 100vh;
+  overflow: hidden;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h1,
+h3 {
+  font-weight: 400;
 }
 
 header {
@@ -23,23 +31,23 @@ header {
   left: 0;
   width: 100%;
   background: #0b1215;
-  padding: 1rem 1rem;
+  padding: 1rem 3rem;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 3;
 }
 
 header .text-box {
   display: inline-block;
 }
 
-header ion-icon {
+header i {
   cursor: pointer;
-  color: #39a0ff;
-  font-size: 24px;
+  color: #dfd1c5;
 }
 
 header div h1 {
@@ -47,203 +55,199 @@ header div h1 {
   font-weight: 600;
   white-space: nowrap;
   text-transform: uppercase;
-  font-size: 24px;
-  background: -webkit-linear-gradient(220.55deg, #8fff85 0%, #39a0ff 100%);
+  font-size: 32px;
+  background: -webkit-linear-gradient(220.55deg, #fff6eb 0%, #dfd1c5 100%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 main {
-  background-color: white;
-  min-height: 100vh;
-  max-width: 1200px;
-  margin: 72px auto 0;
-  padding: 1rem;
+  margin: 84.8px auto 0;
+  min-height: calc(100vh - 72px);
+  background-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(assets/rain-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  transition: 500ms;
+  opacity: 1;
 }
 
-.card {
-  border: 2px solid grey;
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 450px;
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 1000px;
-  margin: 0 auto;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2em 3em 4em 3em;
 }
 
-.card .left {
-  flex: 3;
+.container > div {
   display: flex;
   justify-content: center;
-  align-items: end;
-  background-position: center;
-  background-size: cover;
+  align-items: center;
 }
 
-.clear {
-  background-image: url(assets/clear-bg.jpg);
+.city-time,
+.temp,
+.weather {
+  margin: 0 1em;
 }
 
-.clouds {
-  background-image: url(assets/clouds-bg.jpg);
+.city-time h1 {
+  margin: 0;
+  margin-bottom: 0.2em;
+  font-size: 3em;
 }
 
-.drizzle {
-  background-image: url(assets/drizzle-bg.jpg);
+.temp {
+  font-size: 7em;
+  margin: 0;
 }
 
-.mist {
-  background-image: url(assets/mist-bg.jpg);
+.weather img {
+  display: block;
+  margin: 0.5em 0;
 }
 
-.rain {
-  background-image: url(assets/rain-bg.jpg);
+.panel {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: rgba(110, 110, 110, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 1;
+  padding: 3em 2em;
+  overflow-y: scroll;
 }
 
-.snow {
-  background-image: url(assets/snow-bg.jpg);
+.panel form {
+  margin-bottom: 3em;
 }
 
-.card img {
-  width: 200px;
-  height: 200px;
+.submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.5em;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: #39a0ff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: 0.4s;
 }
 
-.card .right {
-  flex: 5;
-  display: flex;
-  flex-direction: column;
+.submit:hover {
+  background: #fff !important;
+  color: #000;
 }
 
 .search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.7rem 0 0 0;
-}
-
-.search input {
-  position: relative;
-  left: 10px;
-  font-size: 18px;
-  padding: 0.25rem 0.5rem;
-  border-radius: 7px;
-  border: 1px solid gray;
-}
-
-.search input:focus {
-  outline: none;
-  border: 1px solid black;
-}
-
-.search button {
-  position: relative;
-  right: 10px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: gray;
+  background: none;
   border: none;
-  padding: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom: 1px #ccc solid;
+  padding: 0 1em 0.5em 0;
+  width: 80%;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search::placeholder {
+  color: #ccc;
+}
+
+.panel ul {
+  padding: 0 0 1em 0;
+  margin: 2em 0;
+  border-bottom: 1px #ccc solid;
+}
+
+.panel ul li {
+  color: #ccc;
+  margin: 2.5em 0;
+}
+
+.panel ul h4 {
+  margin: 3em 0;
+}
+
+.city {
+  display: block;
   cursor: pointer;
 }
 
-.search ion-icon {
-  font-size: 20px;
-  color: white;
+.city:hover {
+  color: #fff;
 }
 
-.results {
+.details li {
   display: flex;
-  height: 100%;
-  flex: 1;
-}
-
-.temperature {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-.temperature h2 {
-  font-size: 32px;
-}
-
-.details {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.item {
-  margin: 0 auto;
-  align-items: center;
-  display: flex;
-  gap: 0.4rem;
-}
-
-.item img {
-  width: 30px;
-  height: 30px;
-}
-
-@media screen and (min-width: 640px) {
-  .card {
-    flex-direction: row;
-  }
-  .temperature h2 {
-    font-size: 72px;
-  }
-  .item img {
-    height: 60px;
-    width: 60px;
-  }
-
-  .item {
-    gap: 0.8rem;
-  }
-
-  .item p {
-    font-size: 32px;
-  }
-
-  .card .right {
-    flex-direction: column-reverse;
-  }
-
-  .card .right .search {
-    margin: 0 0 3rem 0;
-  }
-}
-
-@media screen and (min-width: 750px) {
+@media screen and (max-width: 800px) {
   header {
-    padding: 1rem 3rem;
+    padding: 1rem 1rem;
   }
 
   header div h1 {
-    font-size: 32px;
+    font-size: 24px;
   }
+
   main {
-    margin: 84.8px auto 0;
-    padding: 2rem;
+    margin: 72px auto 0;
   }
 
-  .search input {
+  .panel,
+  .container {
+    position: relative;
     width: 100%;
-    margin: 0 0 0 3rem;
+    top: initial;
   }
+}
 
-  .search button {
-    margin: 0 3rem 0 0;
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-height: 300px) {
+  .weather-app {
+    min-height: 40em;
   }
 }
