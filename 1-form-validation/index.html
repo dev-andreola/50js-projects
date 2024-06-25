@@ -80,13 +80,22 @@
             <input name="birthday" id="birthday" type="date" required />
             <span class="error-message"></span>
           </fieldset>
-          <fieldset class="term">
-            <input id="term" name="term" type="checkbox" required />
+
+          <fieldset class="term" style="position: relative">
+            <input
+              id="term"
+              name="term"
+              type="checkbox"
+              style="margin-bottom: 1.5em"
+              required
+            />
             <label for="term" class="term-label"
               >Li e concordo com os Termos de Serviço</label
             >
-
-            <span class="error-message"></span>
+            <span
+              class="error-message"
+              style="position: absolute; top: 20px"
+            ></span>
           </fieldset>
 
           <div>

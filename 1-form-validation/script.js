@@ -42,8 +42,8 @@ const errorMessages = {
     tooShort: "O campo de CPF não tem caracteres suficientes.",
   },
   birthday: {
-    valueMissing: "O campo de data de nascimento não pode estar vazio.",
-    customError: "Você deve ser maior que 18 anos para se cadastrar.",
+    valueMissing: "O campo de data não pode estar vazio.",
+    customError: "Você deve ser maior que 18 anos.",
   },
   term: {
     valueMissing: "Você deve aceitar nossos termos antes de continuar.",
@@ -72,10 +72,8 @@ function validateCPF(input) {
     !secondDigitValidation(cpf)
   ) {
     input.setCustomValidity("Por favor, preencha um CPF válido.");
-    console.log("cpf inválido");
   } else {
     input.setCustomValidity("");
-    console.log("cpf válido");
   }
 }
 
@@ -132,6 +130,14 @@ function validateAge(input) {
 }
 
 function inputValidation(input) {
+  formInputs.forEach((input) => {
+    input.classList.remove("error-border");
+    const errorMessageOutput = input.parentNode.querySelector(".error-message");
+    if (errorMessageOutput) {
+      errorMessageOutput.textContent = "";
+    }
+  });
+
   let message = "";
   input.setCustomValidity("");
   if (input.name == "cpf" && input.value.length >= 11) {
@@ -148,10 +154,13 @@ function inputValidation(input) {
   });
 
   const errorMessageOutput = input.parentNode.querySelector(".error-message");
+
   const inputValidator = input.checkValidity();
 
   if (!inputValidator) {
     errorMessageOutput.textContent = message;
+    errorMessageOutput.classList.add("error-message");
+    input.classList.add("error-border");
   } else {
     errorMessageOutput.textContent = "";
   }

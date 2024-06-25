@@ -65,7 +65,7 @@ main {
   margin: 72px auto 0;
   background-color: #d4d4d4;
   min-height: calc(100vh - 72px);
-  padding-top: 1em;
+  padding: 0.5em;
 }
 
 main .card {
@@ -81,7 +81,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   border: none;
-  gap: 5px;
+  gap: 2px;
 }
 
 label {
@@ -95,6 +95,7 @@ label span {
 
 .term-label {
   font-weight: 400;
+  padding-bottom: 1.5em;
 }
 
 input {
@@ -108,6 +109,17 @@ input {
 
 input::placeholder {
   color: #a3a3a3;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: small;
+  margin-bottom: 10px;
+}
+
+.error-border {
+  border-color: #dc2626;
+  background-color: #ffe0e0;
 }
 
 .term {
@@ -149,7 +161,7 @@ input::placeholder {
   main {
     grid-template-columns: repeat(3, 1fr);
     margin: 84.8px auto 0;
-    padding: 2rem;
+    padding: 1rem;
   }
 }
 
