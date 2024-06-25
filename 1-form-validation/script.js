@@ -4,10 +4,50 @@ goBackButton.addEventListener("click", () => {
   window.location.replace("/");
 });
 
+const errorTypes = [
+  "valueMissing",
+  "typeMismatch",
+  "patternMismatch",
+  "tooShort",
+  "customError",
+];
+
+const errorMessages = {
+  nome: {
+    valueMissing: "O campo de nome não pode estar vazio.",
+    patternMismatch: "Por favor, preencha um nome válido.",
+    tooShort: "Por favor, preencha um nome válido.",
+  },
+  email: {
+    valueMissing: "O campo de e-mail não pode estar vazio.",
+    typeMismatch: "Por favor, preencha um email válido.",
+    tooShort: "Por favor, preencha um e-mail válido.",
+  },
+  rg: {
+    valueMissing: "O campo de RG não pode estar vazio.",
+    patternMismatch: "Por favor, preencha um RG válido.",
+    tooShort: "O campo de RG não tem caractéres suficientes.",
+  },
+  cpf: {
+    valueMissing: "O campo de CPF não pode estar vazio.",
+    patternMismatch: "Por favor, preencha um CPF válido.",
+    customError: "O CPF digitado não existe.",
+    tooShort: "O campo de CPF não tem caractéres suficientes.",
+  },
+  aniversario: {
+    valueMissing: "O campo de data de nascimento não pode estar vazio.",
+    customError: "Você deve ser maior que 18 anos para se cadastrar.",
+  },
+  termos: {
+    valueMissing: "Você deve aceitar nossos termos antes de continuar.",
+  },
+};
+
 const formInputs = document.querySelectorAll("[required]");
 
 formInputs.forEach((input) => {
   input.addEventListener("blur", () => inputValidation(input));
+  input.addEventListener("invalid", (e) => e.preventDefault());
 });
 
 function validateCPF(input) {
@@ -75,8 +115,24 @@ function secondDigitValidation(cpf) {
   return soma != cpf[10];
 }
 
+function validateAge(input) {
+  const birthday = new Date(input.value);
+  const actualDate = new Date();
+  const majority = new Date(
+    birthday.getUTCFullYear() + 18,
+    birthday.getUTCMonth(),
+    birthday.getUTCDate()
+  );
+
+  console.log(actualDate >= majority);
+}
+
 function inputValidation(input) {
   if (input.name == "cpf" && input.value.length >= 11) {
     validateCPF(input);
+  }
+  if (input.name == "birthday" && input.value != "");
+  {
+    validateAge(input);
   }
 }
