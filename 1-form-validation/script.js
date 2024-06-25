@@ -33,13 +33,13 @@ const errorMessages = {
   rg: {
     valueMissing: "O campo de RG não pode estar vazio.",
     patternMismatch: "Por favor, preencha um RG válido.",
-    tooShort: "O campo de RG não tem caractéres suficientes.",
+    tooShort: "O campo de RG não tem caracteres suficientes.",
   },
   cpf: {
     valueMissing: "O campo de CPF não pode estar vazio.",
     patternMismatch: "Por favor, preencha um CPF válido.",
     customError: "Por favor, preencha um CPF válido.",
-    tooShort: "O campo de CPF não tem caractéres suficientes.",
+    tooShort: "O campo de CPF não tem caracteres suficientes.",
   },
   birthday: {
     valueMissing: "O campo de data de nascimento não pode estar vazio.",
@@ -66,22 +66,16 @@ function validateCPF(input) {
     "99999999999",
   ];
 
-  console.log(cpf);
-
-  console.log(`invalidCPF.includes(cpf) = ${invalidCPF.includes(cpf)}`);
-  console.log(`firstDigitValidation(cpf) = ${!firstDigitValidation(cpf)}`);
-  console.log(`secondDigitValidation(cpf) = ${!secondDigitValidation(cpf)}`);
-
   if (
     invalidCPF.includes(cpf) ||
     !firstDigitValidation(cpf) ||
     !secondDigitValidation(cpf)
   ) {
-    input.setCustomValidity("Por favor, preencha um CPF válido!");
-    console.log("cpf invalido");
+    input.setCustomValidity("Por favor, preencha um CPF válido.");
+    console.log("cpf inválido");
   } else {
     input.setCustomValidity("");
-    console.log("cpf existe");
+    console.log("cpf válido");
   }
 }
 
@@ -100,7 +94,7 @@ function firstDigitValidation(cpf) {
     soma = 0;
   }
 
-  return soma != cpf[9];
+  return soma == cpf[9];
 }
 
 function secondDigitValidation(cpf) {
@@ -118,7 +112,7 @@ function secondDigitValidation(cpf) {
     soma = 0;
   }
 
-  return soma != cpf[10];
+  return soma == cpf[10];
 }
 
 function validateAge(input) {
@@ -143,17 +137,13 @@ function inputValidation(input) {
   if (input.name == "cpf" && input.value.length >= 11) {
     validateCPF(input);
   }
-  if (input.name == "birthday" && input.value != "");
-  {
+  if (input.name == "birthday" && input.value !== "") {
     validateAge(input);
   }
-
-  console.log(input.validity);
 
   errorTypes.forEach((error) => {
     if (input.validity[error]) {
       message = errorMessages[input.name][error];
-      console.log(message);
     }
   });
 
