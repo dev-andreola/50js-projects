@@ -1,10 +1,10 @@
 # Form Validation
 
-Este é um simples formulário onde pude praticar conceitos interessantes como:
+This is a simple form where I was able to practice interesting concepts such as:
 
-- Atributos de validação
-- Validações para os dígitos verificadores do CPF
-- Validações de maioridade a partir da comparação de datas
-- Mensagens customizadas de erro para cada tipo de campo
+- Validation attributes
+- Validations for CPF check digits
+- Validations of majority based on date comparison
+- Custom error messages for each field type
 
 [:rewind: GO BACK](../README.md)
