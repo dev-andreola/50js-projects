@@ -24,7 +24,7 @@
     </header>
     <main>
       <div class="card">
-        <form data-formulario>
+        <form id="form">
           <fieldset>
             <label for="nome">Nome <span>*</span></label>
             <input
@@ -50,17 +50,7 @@
             />
             <span class="error-message"></span>
           </fieldset>
-          <fieldset>
-            <label for="rg">RG <span>*</span></label>
-            <input
-              name="rg"
-              placeholder="Seu RG"
-              id="rg"
-              type="text"
-              required
-            />
-            <span class="error-message"></span>
-          </fieldset>
+
           <fieldset>
             <label for="cpf">CPF <span>*</span></label>
             <input
@@ -103,7 +93,6 @@
               value="Avançar"
               class="form-button"
               id="submit"
-              data-submit-button
               type="submit"
             />
             <span class="error-message"></span>

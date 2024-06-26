@@ -5,6 +5,7 @@ goBackButton.addEventListener("click", () => {
 });
 
 const formInputs = document.querySelectorAll("[required]");
+const formButton = document.getElementById("submit");
 
 formInputs.forEach((input) => {
   input.addEventListener("blur", () => inputValidation(input));
@@ -129,20 +130,25 @@ function validateAge(input) {
   }
 }
 
-function inputValidation(input) {
-  formInputs.forEach((input) => {
-    input.classList.remove("error-border");
-    const errorMessageOutput = input.parentNode.querySelector(".error-message");
-    if (errorMessageOutput) {
-      errorMessageOutput.textContent = "";
-    }
-  });
+function inputValidation(input, showAllErrors = false) {
+  if (!showAllErrors) {
+    formInputs.forEach((input) => {
+      input.classList.remove("error-border");
+      const errorMessageOutput =
+        input.parentNode.querySelector(".error-message");
+      if (errorMessageOutput) {
+        errorMessageOutput.textContent = "";
+      }
+    });
+  }
 
   let message = "";
   input.setCustomValidity("");
+
   if (input.name == "cpf" && input.value.length >= 11) {
     validateCPF(input);
   }
+
   if (input.name == "birthday" && input.value !== "") {
     validateAge(input);
   }
@@ -154,7 +160,6 @@ function inputValidation(input) {
   });
 
   const errorMessageOutput = input.parentNode.querySelector(".error-message");
-
   const inputValidator = input.checkValidity();
 
   if (!inputValidator) {
@@ -165,3 +170,16 @@ function inputValidation(input) {
     errorMessageOutput.textContent = "";
   }
 }
+
+formButton.addEventListener("click", () => {
+  let allValid = true;
+  formInputs.forEach((input) => {
+    inputValidation(input, true);
+    if (!input.checkValidity()) {
+      allValid = false;
+    }
+  });
+  if (allValid) {
+    alert("Cadastro feito com sucesso!");
+  }
+});
