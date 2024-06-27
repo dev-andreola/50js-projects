@@ -7,8 +7,8 @@ const projects = [
   },
   {
     name: "Digital Clock",
-    img: "1-form-validation/assets/print.png",
-    desc: "Relógio digital com light/dark theme.",
+    img: "2-digital-clock/assets/print.png",
+    desc: "Relógio digital com tema claro e escuro.",
     URL: "2-digital-clock/index.html",
   },
 ];

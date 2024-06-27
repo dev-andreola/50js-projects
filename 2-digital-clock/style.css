@@ -100,7 +100,7 @@ main {
   margin-left: 17px;
   font-size: 11px;
   font-weight: 500;
-  color: dimgrey;
+  color: rgb(194, 194, 194);
   transition: all, 0.2s;
 }
 
@@ -144,7 +144,7 @@ span.curr-day {
   height: 25px;
   width: 30px;
   text-align: center;
-  color: dimgrey;
+  color: rgb(194, 194, 194);
   font-weight: 400;
   font-size: 13px;
   position: absolute;
@@ -185,6 +185,11 @@ span.curr-day {
   transition: all 0.2s;
 }
 
+.container.dark .ampm,
+.container.dark .weeks span {
+  color: dimgrey;
+}
+
 .container.dark .timer span,
 .container.dark .clock-icon,
 .container.dark span.curr-day,
@@ -201,5 +206,75 @@ span.curr-day {
   main {
     margin: 84.8px auto 0;
     padding: 1rem;
+  }
+
+  .container {
+    width: 700px;
+    height: 240px;
+    border-radius: 15px;
+  }
+
+  .container .inside {
+    width: 620px;
+    height: 180px;
+    border-radius: 15px;
+  }
+
+  .weeks {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .weeks span {
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .clock-icon {
+    position: absolute;
+    bottom: 40px;
+    left: 35px;
+    font-size: 18px;
+  }
+
+  .timer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+    margin-left: 90px;
+    font-size: 72px;
+  }
+
+  .timer span {
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    top: 7px;
+    transition: all 0.2s;
+  }
+
+  .ampm {
+    height: 50px;
+    width: 60px;
+    font-size: 30px;
+    position: absolute;
+    bottom: 33px;
+    right: 15px;
+    transition: all 0.2s;
+  }
+
+  .toggle-btn {
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 20px;
+    right: 10px;
+    top: 10px;
+    z-index: 2;
   }
 }
