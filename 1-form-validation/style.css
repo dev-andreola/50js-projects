@@ -147,26 +147,13 @@ input::placeholder {
   background: linear-gradient(220.55deg, #699fd7 0%, #4162dc 100%);
 }
 
-@media screen and (min-width: 550px) {
-  main {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media screen and (min-width: 750px) {
   header div h1 {
     font-size: 32px;
   }
 
   main {
-    grid-template-columns: repeat(3, 1fr);
     margin: 84.8px auto 0;
     padding: 1rem;
-  }
-}
-
-@media screen and (min-width: 950px) {
-  main {
-    grid-template-columns: repeat(4, 1fr);
   }
 }

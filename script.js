@@ -5,6 +5,12 @@ const projects = [
     desc: "Simples formulário com sistema de validação de campos.",
     URL: "1-form-validation/index.html",
   },
+  {
+    name: "Digital Clock",
+    img: "1-form-validation/assets/print.png",
+    desc: "Relógio digital com light/dark theme.",
+    URL: "2-digital-clock/index.html",
+  },
 ];
 
 const main = document.getElementById("main");
