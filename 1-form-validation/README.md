@@ -7,4 +7,4 @@ This is a simple form where I was able to practice interesting concepts such as:
 - Validations of majority based on date comparison
 - Custom error messages for each field type
 
-[:rewind: GO BACK](../README.md)
+[:rewind: GO BACK](../)

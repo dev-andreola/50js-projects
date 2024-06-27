@@ -7,6 +7,7 @@ The objective of this project is to learn, practice and reinforce knowledge with
 |  #  | Project                              | Live Demo                                                                |
 | :-: | ------------------------------------ | ------------------------------------------------------------------------ |
 | 01  | [Form Validation](1-form-validation) | [Preview](https://50js-projects.vercel.app/1-form-validation/index.html) |
+| 02  | [Digital Clock](2-digital-clock)     | [Preview](https://50js-projects.vercel.app/2-digital-clock/index.html)   |
 
 ## Setup Instructions
 
