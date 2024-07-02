@@ -54,7 +54,7 @@ function dayOfTheWeek(day, month, year) {
     "Sexta",
     "Sábado",
   ];
-  const date = new Date(year, month - 1, day); // Mês começa de 0 em JavaScript, então subtrai 1
+  const date = new Date(year, month - 1, day);
 
   return weekday[date.getDay()];
 }
