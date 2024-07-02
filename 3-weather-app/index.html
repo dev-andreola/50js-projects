@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <img
+          src="assets/left-arrow.svg"
+          width="30px"
+          height="30px"
+          alt="Left Arrow"
+          id="go-back-button"
+        />
+        <div class="text-box">
+          <h1>Weather App</h1>
+        </div>
+        <div></div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h3 class="brand"></h3>
+        <div>
+          <h1 class="temp">16&#176;</h1>
+          <div class="city-time">
+            <h1 class="name">Juiz de Fora</h1>
+            <small>
+              <span class="time">06:09</span>
+              -
+              <span class="date">Domingo 19 Jun</span>
+            </small>
+          </div>
+          <div class="weather">
+            <img
+              src="./assets/day/122.png"
+              class="icon"
+              width="50"
+              height="50"
+              alt="Ícone"
+            />
+            <span class="condition">Nublado</span>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <form id="locationInput">
+          <input
+            type="text"
+            class="search"
+            placeholder="Digite uma cidade..."
+          />
+          <button type="submit" class="submit">
+            <img
+              style="width: 15px; height: 15px"
+              src="assets/lupa.png"
+              alt="Ícone lupa"
+            />
+            <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+          </button>
+        </form>
+        <ul class="cities">
+          <li class="city">Rio de Janeiro</li>
+          <li class="city">Califórnia</li>
+          <li class="city">Juiz de Fora</li>
+          <li class="city">Tóquio</li>
+        </ul>
+
+        <ul class="details">
+          <h4>Detalhes Climáticos</h4>
+          <li>
+            <span>Nublado</span>
+            <span class="cloud">89%</span>
+          </li>
+          <li>
+            <span>Umidade</span>
+            <span class="humidity">64%</span>
+          </li>
+          <li>
+            <span>Ventos</span>
+            <span class="wind">8km/h</span>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

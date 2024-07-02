@@ -11,6 +11,12 @@ const projects = [
     desc: "Relógio digital com tema claro e escuro.",
     URL: "2-digital-clock/index.html",
   },
+  {
+    name: "Weather App",
+    img: "3-weather-app/assets/print.png",
+    desc: "Aplicativo clássico de clima com design moderno.",
+    URL: "3-weather-app/index.html",
+  },
 ];
 
 const main = document.getElementById("main");
