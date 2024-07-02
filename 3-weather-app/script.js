@@ -83,8 +83,6 @@ async function fetchWeatherData() {
         "//cdn.weatherapi.com/weather/64x64/".length
       );
 
-      console.log(`icon.src = ./assets/${iconId}`);
-
       icon.src = `./assets/${iconId}`;
 
       cloudOutput.innerHTML = data.current.cloud + "%";
